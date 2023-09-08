@@ -9,7 +9,7 @@ const getContactById = async (id) => {
 };
 
 const addContact = async ({ name, email, phone, favorite }) => {
-  return Contact.create({ name, email, phone, favorite });
+  return await Contact.create({ name, email, phone, favorite });
 };
 
 const updateContact = async (id, fields) => {
