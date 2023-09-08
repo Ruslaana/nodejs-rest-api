@@ -1,1 +1,1 @@
-export {default as ctrlWrapper} from "./ctrlWrapper";
+export { default as ctrlWrapper } from "./ctrlWrapper.js";

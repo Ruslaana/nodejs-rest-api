@@ -17,4 +17,4 @@ const updateFavoriteSchema = Joi.object({
 export default {
   schemaValidation,
   updateFavoriteSchema,
-}
+};
