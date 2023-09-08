@@ -66,10 +66,28 @@ const updateContact = async (req, res, next) => {
     })
 }
 
+const updateStatusContact = async (req, res, next) => {
+  const { contactId } = req.params
+  const { favorite } = req.body
+
+  if (typeof favorite !== 'boolean') throw HttpError(400, 'missing field favorite')
+
+  const currentContact = await contacts.updateContact(contactId, { favorite }, { new: true })
+  if (!currentContact) throw HttpError(404, 'Not found')
+
+  res.json({
+    status: "OK",
+    code: 200,
+    data: currentContact,
+  })
+}
+
 export default {
   getAllContacts: ctrlWrapper(getAllContacts),
   getContactsById: ctrlWrapper(getContactsById),
   deleteContactsById: ctrlWrapper(deleteContactsById), 
   createContact: ctrlWrapper(createContact), 
   updateContact: ctrlWrapper(updateContact), 
+  updateStatusContact: ctrlWrapper(updateStatusContact),
+
 }
