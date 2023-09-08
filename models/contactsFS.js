@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { v1 as uuidv1 } from 'uuid';
+import { nanoid } from 'nanoid';
 
 const contactsPath = path.resolve('models', 'contacts.json')
 
@@ -36,7 +36,7 @@ const addContact = async (body) => {
       el.phone.toLowerCase().trim() === phone.toLowerCase().trim())
   if (duplicateTrue) return null
 
-  const id = uuidv1()
+  const id = nanoid()
   const newContact = { id, name, email, phone }
 
   allContacts.push(newContact)
