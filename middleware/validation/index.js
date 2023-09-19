@@ -1,1 +1,1 @@
-export { default as validateContacts } from "./validateContacts.js"
+export { default as isValidId } from "./isValidId.js"
