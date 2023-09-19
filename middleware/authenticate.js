@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
 
-import ctrlWrapper from "../decorators/ctrlWrapper.js";
 import User from "../schemas/User.js";
 import HttpError from "../helpers/HttpError.js";
+import ctrlWrapper from "../decorators/ctrlWrapper.js";
 
 const { JWT_SECRET } = process.env;
 
