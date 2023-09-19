@@ -1,5 +1,6 @@
 import Contact from '../schemas/contactSchema.js';
 
+
 const listContacts = async (filterObject) => {
   return await Contact.find(filterObject, ).populate("owner");;
 };
