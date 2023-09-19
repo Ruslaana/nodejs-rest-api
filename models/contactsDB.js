@@ -1,7 +1,7 @@
 import Contact from '../schemas/contactSchema.js';
 
-const listContacts = async () => {
-  return await Contact.find();
+const listContacts = async (filterObject) => {
+  return await Contact.find(filterObject, ).populate("owner");;
 };
 
 const getContactById = async (id) => {
@@ -9,7 +9,7 @@ const getContactById = async (id) => {
 };
 
 const addContact = async ({ name, email, phone, favorite }) => {
-  return await Contact.create({ name, email, phone, favorite });
+  return Contact.create({ name, email, phone, favorite });
 };
 
 const updateContact = async (id, fields) => {
