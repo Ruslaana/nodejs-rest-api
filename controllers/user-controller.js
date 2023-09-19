@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import jwt from "jsonwebtoken";
 
 import User from "../schemas/User.js";
@@ -22,7 +22,6 @@ const register = async (req, res) => {
     subscription: newUser.subscription,
   });
 };
-
 
 const login = async (req, res) => {
   const { email, password } = req.body;
