@@ -10,7 +10,7 @@ import env from "../models/env.js";
 const register = async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
-  if (user) throw HttpError(409, "Email in use");
+  if (user) throw HttpError(409, "Email is already used");
 
   const hashPassword = await bcrypt.hash(password, 7);
   const newUser = await User.create({ ...req.body, password: hashPassword });
@@ -65,7 +65,7 @@ const logout = async (req, res) => {
   await User.findByIdAndUpdate(_id, { token: "" });
 
   res.status(204).json({
-    status: "No Content",
+    status: "No content",
     code: 204,
   });
 };
