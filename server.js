@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import app from "./app.js";
-import normalizePort from "./helpers/normalizePort.js";
+import normalizePort from "./helpers/normalizePort.js"
 
 import dotenv from 'dotenv';
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
@@ -21,4 +21,4 @@ mongoose.connect(DB_HOST, {
   .catch(error => {
     console.log(`Server not running. Error message: ${error.message}`)
     process.exit(1)
-  })
+  });

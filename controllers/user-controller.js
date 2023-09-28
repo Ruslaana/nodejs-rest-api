@@ -3,11 +3,13 @@ import jwt from 'jsonwebtoken';
 import Jimp from 'jimp';
 import gravatar from 'gravatar';
 
+import path from 'path';
+import fs from 'fs/promises';
+
 import User from '../schemas/User.js';
 import HttpError from '../helpers/HttpError.js';
 import ctrlWrapper from '../decorators/ctrlWrapper.js';
-import path from 'path';
-import fs from 'fs/promises';
+
 
 import dotenv from 'dotenv';
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });

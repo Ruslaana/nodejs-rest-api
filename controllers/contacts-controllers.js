@@ -33,7 +33,6 @@ const getContactsById = async (req, res, next) => {
 }
 
 const deleteContactsById = async (req, res, next) => {
-  
   const contactId = req.params.contactId
   const currentContact = await contacts.removeContact(contactId)
 
