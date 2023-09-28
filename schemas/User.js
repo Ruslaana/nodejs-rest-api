@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { handleMongooseError, runValidateAtUpdate } from './hooks.js';
+import { handleMongooseError, runValidateAtUpdate } from './hooks';
 
 const emailRegexp = /^([a-zA-Z0-9_-]+)@([a-zA-Z0-9_-]+).([a-zA-Z]{2,5})$/;
 
@@ -21,9 +21,8 @@ const userSchema = new Schema(
       enum: ["starter", "pro", "business"],
       default: "starter",
     },
-    token: {
-      type: String,
-    } 
+    token: String,
+    avatarURL: String,
   },
   { versionKey: false, timestamps: true }
 );

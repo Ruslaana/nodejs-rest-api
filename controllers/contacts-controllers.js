@@ -1,10 +1,10 @@
 import { ctrlWrapper } from "../decorators/index.js"
-import { HttpError } from "../helpers/index.js";
+import { HttpError } from "../helpers/index.js"
 import contacts from "../models/contactsDB.js"
 
 const getAllContacts = async (req, res, next) => {
   const { _id: owner } = req.user;
-  const { page = 1, limit = 1, favorite } = req.query;
+  const { page = 1, limit = 10, favorite } = req.query;
   const filterObject = favorite ? { owner, favorite } : { owner };
   const skip = (page - 1) * limit;
   const params = { skip, limit, }
@@ -49,7 +49,9 @@ const deleteContactsById = async (req, res, next) => {
 const createContact = async (req, res, next) => {
   const { name, email, phone } = req.body
 
-  const currentContact = await contacts.addContact({ name, email, phone })
+  const { _id: owner } = req.user
+    
+  const currentContact = await contacts.addContact({ name, email, phone, owner })
   if (!currentContact) throw HttpError(404, 'Not found')
 
   res.json({

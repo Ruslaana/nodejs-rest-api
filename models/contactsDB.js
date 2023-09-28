@@ -1,16 +1,17 @@
 import Contact from '../schemas/contactSchema.js';
 
-
-const listContacts = async (filterObject) => {
-  return await Contact.find(filterObject, ).populate("owner");;
+const listContacts = async (filterObject, params) => {
+  console.log("🚀 ~ file: contactsDB.js:6 ~ listContacts ~ filterObject:", filterObject)
+  console.log("🚀 ~ file: contactsDB.js:5 ~ listContacts ~ params:", params)
+  return await Contact.find(filterObject, '', params).populate('owner', 'email')
 };
 
 const getContactById = async (id) => {
   return await Contact.findOne({ _id: id });
 };
 
-const addContact = async ({ name, email, phone, favorite }) => {
-  return Contact.create({ name, email, phone, favorite });
+const addContact = async ({ name, email, phone, favorite, owner }) => {
+  return Contact.create({ name, email, phone, favorite, owner });
 };
 
 const updateContact = async (id, fields) => {
