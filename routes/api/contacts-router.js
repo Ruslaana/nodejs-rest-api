@@ -6,7 +6,7 @@ import validation from '../../schemas/contactsValidation.js';
 import validateBody from '../../decorators/validateBody.js';
 import authenticate from '../../middleware/authenticate.js';
 
-const contactsRouter = Router()
+const contactsRouter = Router();
 
 contactsRouter.use(authenticate);
 

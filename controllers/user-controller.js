@@ -3,10 +3,10 @@ import jwt from 'jsonwebtoken';
 import Jimp from 'jimp';
 import gravatar from 'gravatar';
 
-import User from '../schemas/usersMongo.js';
+import User from '../schemas/User.js';
 import HttpError from '../helpers/HttpError.js';
 import ctrlWrapper from '../decorators/ctrlWrapper.js';
-import path from 'path'
+import path from 'path';
 import fs from 'fs/promises';
 
 import dotenv from 'dotenv';

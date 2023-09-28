@@ -7,19 +7,19 @@ const listContacts = async (filterObject, params) => {
 };
 
 const getContactById = async (id) => {
-  return await Contact.findOne({ _id: id });
+  return await Contact.findOne({ _id: id })
 };
 
 const addContact = async ({ name, email, phone, favorite, owner }) => {
-  return Contact.create({ name, email, phone, favorite, owner });
+  return Contact.create({ name, email, phone, favorite, owner })
 };
 
 const updateContact = async (id, fields) => {
-  return await Contact.findByIdAndUpdate({ _id: id }, fields, { new: true });
+  return await Contact.findByIdAndUpdate({ _id: id }, fields, { new: true })
 };
 
 const removeContact = async (id) => {
-  return await Contact.findByIdAndRemove({ _id: id });
+  return await Contact.findByIdAndRemove({ _id: id })
 };
 
 export default {

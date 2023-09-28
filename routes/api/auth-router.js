@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import userController from '../../controllers/users-controller.js';
+import userController from '../../controllers/user-controller.js';
 import authenticate from '../../middleware/authenticate.js';
 import usersValidation from '../../middleware/validation/userValidation.js';
 import upload from '../../middleware/upload.js';
