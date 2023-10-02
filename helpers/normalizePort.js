@@ -12,4 +12,4 @@ const normalizePort = (val) => {
   return false;
 }
 
-export default normalizePort
+export default normalizePort;
