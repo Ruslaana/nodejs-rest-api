@@ -7,7 +7,7 @@ import { customAlphabet } from 'nanoid';
 import User from '../schemas/User.js';
 import HttpError from '../helpers/HttpError.js';
 import ctrlWrapper from '../decorators/ctrlWrapper.js';
-import sendEmail from '../helpers/sendEmail.js';
+import sendEmail from '../services/email/sendEmail.js';
 
 import path from 'path';
 import fs from 'fs/promises';
