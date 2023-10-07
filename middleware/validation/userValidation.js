@@ -1,8 +1,10 @@
 import validateBody from "../../decorators/validateBody.js";
-import User from "../../schemas/User.js";
+import usersSchemas from "../../schemas/userValidation.js";
 
-const userValidate = validateBody(User.userSignupValidation);
+const userValidate = validateBody(usersSchemas.userSignupValidation);
 
-const userSubscriptionValidate = validateBody(User.usersSubscriptionFieldSchema);
+const userSubscriptionValidate = validateBody(usersSchemas.usersSubscriptionFieldSchema);
 
-export default { userValidate, userSubscriptionValidate };
+const userEmailValidate = validateBody(usersSchemas.userEmailSchema);
+
+export default { userValidate, userSubscriptionValidate, userEmailValidate };
